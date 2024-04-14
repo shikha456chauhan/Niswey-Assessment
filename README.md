@@ -13,6 +13,6 @@
 
 Open git bash or command line tools at application file and run `npm install` command or if you know what to do, just look at `package.json` file
 
-## Run the application for backend
+## Run the application
 - run `npm run start`
-- backend app will work at (http://localhost:8000)
+- app will work at (http://localhost:8000)
