@@ -18,10 +18,19 @@ const insertDataFunc = async(fileData) => {
    })
 }
 
+app.get('/', (req, res) => {
+    res.send('Welcome to the file upload API! .To upload please try route `http://localhost:8000/upload` with POST method');
+});
+
 app.post("/upload",async (req, res)=>{
     try {
         let file = req.files?.file
         if(!file) throw new Error("Upload a file")
+
+         // Validate file type
+         if (file.mimetype !== 'application/xml') {
+            throw new Error('Only XML files are allowed');
+        }
         
         let result = await insertDataFunc(file.data)
 
